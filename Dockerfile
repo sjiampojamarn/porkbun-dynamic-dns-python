@@ -8,3 +8,7 @@ RUN pip3 install requests
 
 WORKDIR /
 COPY ./porkbun-ddns.py ./
+COPY ./entrypoint.sh ./
+RUN chmod 755 ./entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
