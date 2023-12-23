@@ -2,6 +2,7 @@ ARG BUILD_FROM=alpine
 FROM ${BUILD_FROM}
 
 RUN apk add --no-cache python3 py3-pip bind-tools curl bash \
+  && apk update && apk upgrade --no-cache \
   && rm -rf /var/cache/apk/*
   
 RUN python3 -m venv .venv \
